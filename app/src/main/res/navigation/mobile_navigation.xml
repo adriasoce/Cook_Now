@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/diarioFragment">
+
+
+    <fragment
+        android:id="@+id/diarioFragment"
+        android:name="com.cooknow.cooknow.DiarioFragment"
+        android:label="fragment_diario"
+        tools:layout="@layout/fragment_diario" />
+    <fragment
+        android:id="@+id/recetarioFragment"
+        android:name="com.cooknow.cooknow.RecetarioFragment"
+        android:label="fragment_recetario"
+        tools:layout="@layout/fragment_recetario" />
+    <fragment
+        android:id="@+id/listaCompraFragment"
+        android:name="com.cooknow.cooknow.ListaCompraFragment"
+        android:label="fragment_lista_compra"
+        tools:layout="@layout/fragment_lista_compra" />
+    <fragment
+        android:id="@+id/perfilFragment"
+        android:name="com.cooknow.cooknow.PerfilFragment"
+        android:label="fragment_perfil"
+        tools:layout="@layout/fragment_perfil" />
+</navigation>
