@@ -1,11 +1,21 @@
 package com.cooknow.cooknow.classes
 
-data class RecetaKt(
-    val nombre: String,
-    val imagen: String,
-    val descripcion: String,
-    val popularidad: String,
-    val duracion: String,
-    val personas: String,
-    val dificultad: String
-)
+class RecetaKt(
+    private val nombre: String,
+    private val imagen: String,
+    private val descripcion: String,
+    private val popularidad: String,
+    private val duracion: String,
+    private val personas: String,
+    private val dificultad: String
+) {
+
+    fun getNombre(): String{
+        return nombre
+    }
+
+    fun getDescripcion(): String{
+        return descripcion
+    }
+
+}
