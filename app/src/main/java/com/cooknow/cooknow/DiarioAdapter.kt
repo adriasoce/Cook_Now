@@ -28,7 +28,10 @@ class DiarioAdapter(val receta:List<RecetaKt>):RecyclerView.Adapter<DiarioAdapte
 
         fun render(receta: RecetaKt){
             view.nombreReceta.text = receta.getNombre()
-            view.detallesReceta.text = receta.getDescripcion()
+            view.descripcionReceta.text = receta.getDescripcion()
+            view.duracionReceta.text = receta.getDuracion()
+            view.personasReceta.text = receta.getPersonas()
+            view.dificultadReceta.numStars = receta.getDificultad()
         }
     }
 
