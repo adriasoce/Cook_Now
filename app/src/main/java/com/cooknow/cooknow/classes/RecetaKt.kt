@@ -1,6 +1,6 @@
 package com.cooknow.cooknow.classes
 
-class Receta(
+class RecetaKt(
     private val nombre: String,
     private val imagen: String,
     private val descripcion: String,
@@ -9,13 +9,6 @@ class Receta(
     private val personas: String,
     private val dificultad: Int
 ) {
-
-    fun dificultadStars(): String{
-
-        if (this.dificultad == 1) return "⭐"
-        else if (this.dificultad == 2) return "⭐⭐"
-        else return "⭐⭐⭐"
-    }
 
     fun getNombre(): String{
         return nombre

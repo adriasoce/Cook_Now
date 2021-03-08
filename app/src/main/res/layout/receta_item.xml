@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="450dp"
+    android:background="#FAE8E0"
+    android:orientation="vertical"
+    android:paddingBottom="15dp"
+    android:radius="50dp">
+
+
+    <TextView
+        android:id="@+id/nombreReceta"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="#FFC75F"
+        android:gravity="center"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        tools:text="Plato Ejemplo" />
+
+    <TextView
+        android:id="@+id/popularidadReceta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:textSize="15dp"
+        android:textColor="#B68D40"
+        tools:text="450" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/imgReceta"
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:padding="10dp"
+            app:srcCompat="@drawable/ic_cooking" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                android:id="@+id/descripcionString"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Descripcion:"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/descripcionReceta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLength="80"
+                app:layout_constraintTop_toBottomOf="@+id/descripcionString"
+                tools:text="Esta receta viene del país x y ha ganado mucha popularidad porque y..." />
+
+            <TextView
+                android:id="@+id/duracionString"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Duracion:"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/duracionReceta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/duracionString"
+                tools:text="40 min" />
+
+            <TextView
+                android:id="@+id/personasString"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Receta para:"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/personasReceta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="4 comensales" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/infoReceta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:numStars="5"
+            android:text="Dificultad:"
+            android:textSize="20dp"></TextView>
+
+        <RatingBar
+            android:id="@+id/dificultadReceta"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:numStars="5" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/botonRechazar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#4C5270"
+            android:text="Prefiero otra"
+            android:textSize="15dp"></Button>
+
+        <Button
+            android:id="@+id/botonCocinar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="¡A cocinar!"
+            android:textColor="#59981A"
+            android:textSize="15dp"></Button>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>
