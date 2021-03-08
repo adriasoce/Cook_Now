@@ -59,14 +59,15 @@
             android:layout_height="match_parent"
             android:orientation="vertical" >
 
-            <Switch
+            <CheckBox
                 android:id="@+id/botonCocinar"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_gravity="end"
-                android:text="Hecha:"
+                android:layout_margin="5dp"
+                android:text="Buy?"
                 android:checked="true"
-                android:thumbTint="#E7F2F8"></Switch>
+                android:thumbTint="#E7F2F8"></CheckBox>
 
 
         </LinearLayout>
