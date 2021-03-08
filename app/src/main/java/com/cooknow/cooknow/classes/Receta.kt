@@ -2,7 +2,7 @@ package com.cooknow.cooknow.classes
 
 class Receta(
     private val nombre: String,
-    private val imagen: String,
+    private val imagen: Int,
     private val descripcion: String,
     private val popularidad: String,
     private val duracion: String,
@@ -14,7 +14,7 @@ class Receta(
         return nombre
     }
 
-    fun getImagen(): String{
+    fun getImagen(): Int{
         return imagen
     }
 
