@@ -3,10 +3,8 @@ package com.cooknow.cooknow
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import androidx.recyclerview.widget.RecyclerView
 import com.cooknow.cooknow.classes.Receta
-import com.cooknow.cooknow.classes.RecetaKt
 import kotlinx.android.synthetic.main.receta_item.view.*
 
 class DiarioAdapter(val receta:MutableList<Receta>):RecyclerView.Adapter<DiarioAdapter.DiarioHolder>() {

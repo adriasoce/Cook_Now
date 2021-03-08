@@ -46,8 +46,6 @@ class DiarioFragment : Fragment() {
     }
 
     fun initRecyclerRecetario(){
-        recetas.shuffle()
-        var subRecetas = recetas.subList(1, 5)
         recyclerView.addItemDecoration(OverlappingDecoration())
         recyclerView.layoutManager = LinearLayoutManager(activity)
         val adapter = DiarioAdapter(subRecetas)
