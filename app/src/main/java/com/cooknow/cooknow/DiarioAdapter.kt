@@ -44,7 +44,6 @@ class DiarioAdapter(val receta:MutableList<RecetaKt>):RecyclerView.Adapter<Diari
             view.duracionReceta.text = receta.getDuracion()
             view.personasReceta.text = receta.getPersonas()
             view.dificultadReceta.numStars = receta.getDificultad()
-            view.popularidadReceta.text = receta.getPopularidad()
         }
 
 
