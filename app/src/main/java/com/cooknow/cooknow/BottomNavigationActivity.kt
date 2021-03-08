@@ -33,6 +33,7 @@ class BottomNavigationActivity : AppCompatActivity() {
                 R.id.navigation_lista_compra->setCurrentFragment(listaCompraFragment)
                 R.id.navigation_perfil->setCurrentFragment(perfilFragment)
 
+                
             }
             true
         }

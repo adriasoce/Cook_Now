@@ -9,11 +9,14 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+
 import com.cooknow.cooknow.classes.OverlappingDecoration
 import com.cooknow.cooknow.classes.RecetaKt
+
 import kotlinx.android.synthetic.main.fragment_diario.*
 
 class DiarioFragment : Fragment() {
+
 
     var recetas: MutableList<RecetaKt> = mutableListOf(
         RecetaKt("Tortilla de patatas", "x", "Esta receta viene de España y ha ganado mucha popularidad porque y...", "20", "10 minutos", "2 comensales", 3),
@@ -29,6 +32,7 @@ class DiarioFragment : Fragment() {
     var shuffledRecetas = recetas.shuffle()
     var subRecetas = recetas.subList(1, 4)
 
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -40,6 +44,7 @@ class DiarioFragment : Fragment() {
         (activity as AppCompatActivity?)!!.title = "Diario"
 
 
+
         return view
     }
 
@@ -47,6 +52,11 @@ class DiarioFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
 
         initRecyclerRecetario()
+
+        // IMPLEMENT
+
+        (activity as AppCompatActivity?)!!.title = "Diario"
+
 
 
 
@@ -58,5 +68,7 @@ class DiarioFragment : Fragment() {
         val adapter = DiarioAdapter(subRecetas)
         recyclerView.adapter = adapter
     }
+
+
 
 }
