@@ -1,13 +1,17 @@
 package com.cooknow.cooknow.classes
 
 class Receta(
+    private val id: Int,
     private val nombre: String,
-    private val imagen: String,
+    private val imagen: Int,
     private val descripcion: String,
-    private val popularidad: String,
     private val duracion: String,
-    private val personas: String,
-    private val dificultad: Int
+    private val raciones: String,
+    private val dificultad: Int,
+    private val ingredientes: MutableList<String>,
+    private val pasos: MutableList<Pasos>,
+    private val congrats: String,
+    private val done: Boolean
 ) {
 
     fun dificultadStars(): String{
@@ -21,7 +25,7 @@ class Receta(
         return nombre
     }
 
-    fun getImagen(): String{
+    fun getImagen(): Int{
         return imagen
     }
 
@@ -29,16 +33,12 @@ class Receta(
         return descripcion
     }
 
-    fun getPopularidad(): String{
-        return popularidad
-    }
-
     fun getDuracion(): String{
         return duracion
     }
 
-    fun getPersonas(): String{
-        return personas
+    fun getRaciones(): String{
+        return raciones
     }
 
     fun getDificultad(): Int{

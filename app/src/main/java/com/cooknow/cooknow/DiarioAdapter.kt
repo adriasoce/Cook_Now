@@ -5,10 +5,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.recyclerview.widget.RecyclerView
+import com.cooknow.cooknow.classes.Receta
 import com.cooknow.cooknow.classes.RecetaKt
 import kotlinx.android.synthetic.main.receta_item.view.*
 
-class DiarioAdapter(val receta:MutableList<RecetaKt>):RecyclerView.Adapter<DiarioAdapter.DiarioHolder>() {
+class DiarioAdapter(val receta:MutableList<Receta>):RecyclerView.Adapter<DiarioAdapter.DiarioHolder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DiarioHolder {
@@ -38,13 +39,12 @@ class DiarioAdapter(val receta:MutableList<RecetaKt>):RecyclerView.Adapter<Diari
 
 
 
-        fun render(receta: RecetaKt){
+        fun render(receta: Receta){
             view.nombreReceta.text = receta.getNombre()
             view.descripcionReceta.text = receta.getDescripcion()
             view.duracionReceta.text = receta.getDuracion()
-            view.personasReceta.text = receta.getPersonas()
+            view.personasReceta.text = receta.getRaciones()
             view.dificultadReceta.numStars = receta.getDificultad()
-            view.popularidadReceta.text = receta.getPopularidad()
         }
 
 
