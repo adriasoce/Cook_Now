@@ -10,8 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".BottomTestActivity"
-            android:label="@string/title_activity_bottom_test"></activity>
+            android:name=".RecetaActivity"
+            android:label="@string/title_activity_receta" />
         <activity
             android:name=".BottomNavigationActivity"
             android:label="@string/title_activity_bottom_navigation" />
