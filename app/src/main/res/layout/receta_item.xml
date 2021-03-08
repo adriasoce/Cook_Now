@@ -20,15 +20,6 @@
         android:textStyle="bold"
         tools:text="Plato Ejemplo" />
 
-    <TextView
-        android:id="@+id/popularidadReceta"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="right"
-        android:textSize="15dp"
-        android:textColor="#B68D40"
-        tools:text="450" />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

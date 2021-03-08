@@ -18,6 +18,10 @@ class DiarioFragment : Fragment() {
 
     val recetas = Recetario().recetario
 
+    var shuffledRecetas = recetas.shuffle()
+    var subRecetas = recetas.subList(1, 4)
+
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -43,7 +47,7 @@ class DiarioFragment : Fragment() {
 
     fun initRecyclerRecetario(){
         recetas.shuffle()
-        val subRecetas = recetas.subList(1, 5)
+        var subRecetas = recetas.subList(1, 5)
         recyclerView.addItemDecoration(OverlappingDecoration())
         recyclerView.layoutManager = LinearLayoutManager(activity)
         val adapter = DiarioAdapter(subRecetas)
