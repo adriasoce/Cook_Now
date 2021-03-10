@@ -45,4 +45,12 @@ class Receta(
         return dificultad
     }
 
+    fun getStringIngredientes(): String{
+        return ingredientes.joinToString(separator = "\n")
+    }
+
+    fun getDone(): Boolean{
+        return done
+    }
+
 }

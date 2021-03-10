@@ -3,6 +3,7 @@ package com.cooknow.cooknow
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.cooknow.cooknow.classes.Receta
 import kotlinx.android.synthetic.main.receta_item.view.*
@@ -39,6 +40,7 @@ class DiarioAdapter(val receta:MutableList<Receta>):RecyclerView.Adapter<DiarioA
 
         fun render(receta: Receta){
             view.nombreReceta.text = receta.getNombre()
+            view.imgReceta.setImageDrawable(ContextCompat.getDrawable(view.context, receta.getImagen()))
             view.descripcionReceta.text = receta.getDescripcion()
             view.duracionReceta.text = receta.getDuracion()
             view.personasReceta.text = receta.getRaciones()
