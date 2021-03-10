@@ -16,10 +16,10 @@ import kotlinx.android.synthetic.main.fragment_diario.*
 
 class DiarioFragment : Fragment() {
 
-    val recetas = Recetario().recetario
+    val recetas = Recetario().getRecetario()
 
-    var shuffledRecetas = recetas.shuffle()
-    var subRecetas = recetas.subList(1, 4)
+    var shuffledRecetas = recetas.shuffled()
+    var subRecetas = shuffledRecetas.subList(1, 4).toMutableList()
 
 
     override fun onCreateView(

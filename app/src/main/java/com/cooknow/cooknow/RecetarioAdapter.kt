@@ -1,5 +1,7 @@
 package com.cooknow.cooknow
 
+import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -25,6 +27,16 @@ class RecetarioAdapter(val receta:List<Receta>):RecyclerView.Adapter<RecetarioAd
 
     override fun onBindViewHolder(holder: RecetarioHolder, position: Int) {
         holder.render(receta[position])
+        holder.view.receta_boton.setOnClickListener(object : View.OnClickListener {
+            override fun onClick(v: View?) {
+
+                Log.i("RECETATEST", "Antes del Intent")
+
+                val mediaStreamIntent = Intent(holder.view.context, RecetaActivity::class.java)
+                mediaStreamIntent.putExtra("Receta", receta[position].getId())
+                holder.view.context.startActivity(mediaStreamIntent)
+            }
+        })
     }
 
     class RecetarioHolder(val view:View):RecyclerView.ViewHolder(view){

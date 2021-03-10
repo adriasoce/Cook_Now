@@ -1,6 +1,9 @@
 package com.cooknow.cooknow.classes
 
-class Receta(
+import android.util.Log
+import java.io.Serializable
+
+class Receta (
     private val id: Int,
     private val nombre: String,
     private val imagen: Int,
@@ -12,7 +15,7 @@ class Receta(
     private val pasos: MutableList<Pasos>,
     private val congrats: String,
     private val done: Boolean
-) {
+): Serializable {
 
     fun dificultadStars(): String{
 
@@ -43,6 +46,24 @@ class Receta(
 
     fun getDificultad(): Int{
         return dificultad
+    }
+
+    fun getCongrats(): String{
+        return congrats
+    }
+
+    fun getStringIngredientes(): String{
+        val ing = ""
+
+        ingredientes.forEach{
+            Log.i("RECETATEST", it)
+        }
+
+        return ing
+    }
+
+    fun getId(): Int{
+        return id
     }
 
 }

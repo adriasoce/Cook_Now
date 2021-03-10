@@ -100,7 +100,7 @@
             android:gravity="center"
             android:numStars="5"
             android:text="Dificultad:"
-            android:textSize="20dp"></TextView>
+            android:textSize="20dp" />
 
         <RatingBar
             android:id="@+id/dificultadReceta"
@@ -124,15 +124,17 @@
             android:layout_height="wrap_content"
             android:textColor="#4C5270"
             android:text="Prefiero otra"
-            android:textSize="15dp"></Button>
+            android:textSize="15dp" />
 
         <Button
             android:id="@+id/botonCocinar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="¡A cocinar!"
-            android:textColor="#59981A"
-            android:textSize="15dp"></Button>
+            android:background="@color/colorPrimary"
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:textSize="15dp"/>
 
 
     </LinearLayout>

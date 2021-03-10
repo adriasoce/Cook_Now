@@ -7,21 +7,17 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
+import com.cooknow.cooknow.classes.Pasos
 import com.cooknow.cooknow.classes.Receta
+import com.cooknow.cooknow.classes.Recetario
 import kotlinx.android.synthetic.main.fragment_recetario.*
 
 
 class RecetarioFragment : Fragment() {
 
     //var adapter: FoodAdapter? = null
-    var foodList: List<Receta> = listOf(
-        Receta(1,"Spaghetti", R.drawable.ic_recetario, "", "", "", 1, mutableListOf(), mutableListOf(), "", false),
-        Receta(2, "Tortilla Francesa", R.drawable.ic_recetario, "", "", "", 2, mutableListOf(), mutableListOf(), "", false),
-        Receta(3, "Pizza margharita", R.drawable.ic_recetario, "", "", "", 2, mutableListOf(), mutableListOf(), "", false),
-        Receta(4, "Arroz con tomate", R.drawable.ic_recetario, "", "", "", 3, mutableListOf(), mutableListOf(), "", false),
-        Receta(5, "Pechuga de pollo", R.drawable.ic_recetario, "", "", "", 2, mutableListOf(), mutableListOf(), "", false),
-        Receta(6, "Pollo de Sichuan", R.drawable.ic_recetario, "", "", "", 3, mutableListOf(), mutableListOf(), "", false)
-    )
+    var foodList: List<Receta> = Recetario().getRecetario()
+
 
 
     override fun onCreateView(

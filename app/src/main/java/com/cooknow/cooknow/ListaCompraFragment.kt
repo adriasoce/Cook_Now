@@ -13,7 +13,7 @@ import kotlinx.android.synthetic.main.fragment_lista_compra.*
 
 class ListaCompraFragment : Fragment() {
 
-    val recetas = Recetario().recetario
+    val recetas = Recetario().getRecetario()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

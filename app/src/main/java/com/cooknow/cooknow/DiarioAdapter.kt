@@ -1,5 +1,7 @@
 package com.cooknow.cooknow
 
+import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -22,14 +24,19 @@ class DiarioAdapter(val receta:MutableList<Receta>):RecyclerView.Adapter<DiarioA
 
     override fun onBindViewHolder(holder: DiarioHolder, position: Int) {
         holder.render(receta[position])
-        holder.view.botonRechazar.setOnClickListener(object : View.OnClickListener {
+        holder.view.botonRechazar.setOnClickListener {
+            receta.removeAt(position)
+            notifyItemRemoved(position)
+            notifyItemRangeChanged(position, receta.size)
+        }
 
-            override fun onClick(view:View){
-                receta.removeAt(position)
-                notifyItemRemoved(position)
-                notifyItemRangeChanged(position, receta.size)
-            }
-        })
+        holder.view.botonCocinar.setOnClickListener {
+            Log.i("RECETATEST", "Antes del Intent")
+
+            val mediaStreamIntent = Intent(holder.view.context, RecetaActivity::class.java)
+            mediaStreamIntent.putExtra("Receta", receta[position].getId())
+            holder.view.context.startActivity(mediaStreamIntent)
+        }
     }
 
 

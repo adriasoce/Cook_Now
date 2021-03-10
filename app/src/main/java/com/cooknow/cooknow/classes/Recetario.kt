@@ -6,7 +6,7 @@ import com.cooknow.cooknow.R
 
 class Recetario(
 
-    val recetario: MutableList<Receta> = mutableListOf(
+    private val recetario: MutableList<Receta> = mutableListOf(
         Receta(id = 1,
                nombre = "Canelones Navideños",
                imagen = R.drawable.canelones,
@@ -402,4 +402,20 @@ class Recetario(
     )
 
 
-)
+){
+
+    fun getRecetario(): MutableList<Receta>{
+        return recetario
+    }
+
+    fun getReceta(id: Int): Receta{
+
+        val size = recetario.size - 1
+
+        for (i: Int in (0..size)){
+            if (recetario[i].getId() == id) return recetario[i]
+        }
+
+        return recetario[0]
+    }
+}
