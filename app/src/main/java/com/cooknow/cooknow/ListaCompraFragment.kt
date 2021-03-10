@@ -15,6 +15,9 @@ class ListaCompraFragment : Fragment() {
 
     val recetas = Recetario().getRecetario()
 
+    var shuffledRecetas = recetas.shuffled()
+    var subRecetas = shuffledRecetas.subList(1, 4).toMutableList()
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -41,7 +44,7 @@ class ListaCompraFragment : Fragment() {
 
     fun initRecyclerCompra(){
         recyclerViewCompra.layoutManager = LinearLayoutManager(activity)
-        val adapter = ListaCompraAdapter(recetas)
+        val adapter = ListaCompraAdapter(subRecetas)
         recyclerViewCompra.adapter = adapter
     }
 

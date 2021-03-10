@@ -34,6 +34,8 @@ class ListaCompraAdapter(val receta:MutableList<Receta>): RecyclerView.Adapter<L
 
         fun render(receta: Receta){
             view.nombreCompra.text = receta.getNombre()
+            view.checkCompra.isChecked = receta.getDone()
+            view.ingredientesCompra.text = receta.getStringIngredientes()
         }
 
 
