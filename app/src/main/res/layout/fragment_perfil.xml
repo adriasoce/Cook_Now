@@ -1,99 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/frameLayout"
+    android:id="@+id/ConstraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".PerfilFragment">
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="98dp"
-        android:scaleType="fitXY"
-        android:visibility="visible"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView4"
-        android:src="@drawable/man" />
-
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_marginStart="16dp"
-        android:scaleType="fitXY"
-        android:src="@drawable/gorro2"
-        android:visibility="visible"
-        app:layout_constraintBottom_toTopOf="@+id/imageView3"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="47dp"
-        android:layout_marginTop="41dp"
-        android:layout_toEndOf="@+id/imageView4"
-        android:gravity="center"
-        android:text="Cambiar foto de perfil"
-        android:textSize="18sp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="141dp"
-        android:layout_height="46dp"
-        android:layout_below="@+id/textView"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="63dp"
-        android:layout_marginTop="33dp"
-        android:layout_marginEnd="41dp"
-        android:layout_toEndOf="@+id/imageView4"
-        android:gravity="center"
-        android:text="Cambiar nombre de usuario"
-        android:textSize="18sp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="144dp"
-        android:layout_height="70dp"
-        android:layout_below="@+id/textView2"
-        android:layout_marginStart="65dp"
-        android:layout_marginTop="33dp"
-        android:layout_toEndOf="@+id/imageView4"
-        android:gravity="center"
-        android:text="Editar gustos, preferencias y alergias"
-        android:textSize="18sp"
-        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="-153dp"
-        android:layout_marginTop="289dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
         android:layout_toEndOf="@+id/imageView4"
         android:gravity="center"
         android:text="Gustos y preferencias"
         android:textSize="18sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="306dp"
-        android:layout_height="120dp"
+        android:layout_width="307dp"
+        android:layout_height="100dp"
         android:layout_below="@+id/textView4"
         android:layout_alignEnd="@+id/textView2"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="53dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
         android:alpha="0.6"
-        android:background="#46FF5722">
+        android:background="#46FF5722"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView8">
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="0dp"
+            android:text="Canelones"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="177dp"
+            android:layout_height="28dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="8dp"
+            android:text="Nuggets"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="8dp"
+            android:text="Pure de guisantes"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView10" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="313dp"
+        android:layout_height="106dp"
+        android:layout_below="@+id/textView4"
+        android:layout_alignEnd="@+id/textView2"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="11dp"
+        android:alpha="0.6"
+        android:background="#46FF5722"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4">
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Alérgico a frutos secos"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteY="28dp" />
 
         <TextView
             android:id="@+id/textView7"
@@ -114,88 +116,109 @@
             android:id="@+id/textView6"
             android:layout_width="177dp"
             android:layout_height="28dp"
-            android:layout_marginStart="0dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="36dp"
             android:text="Evita comer cerdo"
             android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
-        <TextView
-            android:id="@+id/textView5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="0dp"
-            android:layout_marginTop="8dp"
-            android:text="Alérgico a frutos secos"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView6" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="16dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/gorro2"
+            android:visibility="visible"
+            app:layout_constraintBottom_toTopOf="@+id/imageView3"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="66dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/man"
+            android:visibility="visible"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageView4" />
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="20dp"
+        android:layout_toEndOf="@+id/imageView4"
+        android:gravity="center"
+        android:text="Cambiar foto de perfil"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/frameLayout"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="172dp"
+        android:layout_height="64dp"
+        android:layout_below="@+id/textView2"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="4dp"
+        android:layout_toEndOf="@+id/imageView4"
+        android:gravity="center"
+        android:text="Editar gustos, preferencias y alergias"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/frameLayout"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <TextView
         android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="-156dp"
-        android:layout_marginTop="467dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="7dp"
         android:layout_toEndOf="@+id/imageView4"
         android:gravity="center"
         android:text="Platos más cocinados"
         android:textSize="18sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="306dp"
-        android:layout_height="120dp"
-        android:layout_below="@+id/textView4"
-        android:layout_alignEnd="@+id/textView2"
-        android:layout_marginTop="197dp"
-        android:layout_marginEnd="54dp"
-        android:alpha="0.6"
-        android:background="#46FF5722">
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="176dp"
+        android:layout_height="43dp"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="4dp"
+        android:layout_toEndOf="@+id/imageView4"
+        android:gravity="center"
+        android:text="Cambiar nombre de usuario"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/frameLayout"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-        <TextView
-            android:id="@+id/textView9"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="0dp"
-            android:text="Siguiendo una dieta baja en azúcar"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0" />
-
-        <TextView
-            android:id="@+id/textView10"
-            android:layout_width="177dp"
-            android:layout_height="28dp"
-            android:layout_marginStart="0dp"
-            android:layout_marginTop="8dp"
-            android:text="Evita comer cerdo"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView9" />
-
-        <TextView
-            android:id="@+id/textView11"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="0dp"
-            android:layout_marginTop="8dp"
-            android:text="Alérgico a frutos secos"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView10" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
