@@ -8,8 +8,12 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.cooknow.cooknow.classes.Recetario
 
 class BottomNavigationActivity : AppCompatActivity() {
+
+    val recetario = Recetario()
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

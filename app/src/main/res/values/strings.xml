@@ -18,6 +18,13 @@
     <string name="button_access">Acceder</string>
     <string name="button_create">Registrar</string>
 
+    <string name="RecetaAnterior">Receta</string>
+    <string name="Anterior">Anterior</string>
+    <string name="Siguiente">Siguiente</string>
+    <string name="FinalizarSiguiente">¡Finalizar!</string>
+
+    <string name="Congrats">¡Bien hecho Chef!</string>
+
     <string name="text_new">¿Eres nuevo? Crea una cuenta nueva.</string>
     <string name="text_forgot">¿Olvidaste tu contraseña?</string>
     <string name="text_info_forgot">Para recuperar tu constraseña necesitamos verificar que eres tú.</string>

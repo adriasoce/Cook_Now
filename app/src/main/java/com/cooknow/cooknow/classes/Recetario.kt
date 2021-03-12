@@ -6,7 +6,7 @@ import com.cooknow.cooknow.R
 
 class Recetario(
 
-    private val recetario: MutableList<Receta> = mutableListOf(
+    val recetario: MutableList<Receta> = mutableListOf(
         Receta(id = 1,
                nombre = "Canelones Navideños",
                imagen = R.drawable.canelones,
@@ -399,13 +399,42 @@ class Recetario(
             congrats = "¡Listo! Parece laborioso, pero en realidad el macerado y cocinado de la carne se hace solo y los sofritos de ambos tipos de canelones son muy sencillos.",
             done = false
         )
-    )
+    ),
 
+    private val listacompra: MutableList<Receta> = mutableListOf()
 
 ){
 
-    fun getRecetario(): MutableList<Receta>{
-        return recetario
+    fun getRecetario(d: Boolean): MutableList<Receta>{
+        val recetario_bool: MutableList<Receta> = mutableListOf()
+        val size = recetario.size - 1
+
+        for (i: Int in (0..size)){
+            if (recetario[i].getDone() == d) recetario_bool.add(recetario[i])
+        }
+
+        return recetario_bool
+    }
+
+    fun getRecetarioDiario(): MutableList<Receta>{
+        val shuffledRecetas = this.getRecetario(false)
+
+        val topeSubList = when {
+            shuffledRecetas.size > 3 -> 3
+            else -> shuffledRecetas.size
+        }
+
+        val subRecetas = shuffledRecetas.subList(0, topeSubList)
+
+        return subRecetas
+    }
+
+    fun getListaCompra(): MutableList<Receta>{
+        return listacompra
+    }
+
+    fun anadirListaCompra(r: Receta){
+        listacompra.add(r)
     }
 
     fun getReceta(id: Int): Receta{
@@ -417,5 +446,13 @@ class Recetario(
         }
 
         return recetario[0]
+    }
+
+    fun setDone(id: Int){
+        val size = recetario.size - 1
+
+        for (i: Int in (0..size)){
+            if (recetario[i].getId() == id) this.recetario[i].setDone(true)
+        }
     }
 }

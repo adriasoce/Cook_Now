@@ -16,7 +16,7 @@ import kotlinx.android.synthetic.main.fragment_recetario.*
 class RecetarioFragment : Fragment() {
 
     //var adapter: FoodAdapter? = null
-    var foodList: List<Receta> = Recetario().getRecetario()
+    var foodList: List<Receta> = Recetario().getRecetario(true)
 
 
 
@@ -31,6 +31,12 @@ class RecetarioFragment : Fragment() {
         return view
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        (activity as AppCompatActivity?)!!.title = "Recetario"
+    }
+
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
@@ -39,7 +45,7 @@ class RecetarioFragment : Fragment() {
 
     fun initRecyclerRecetario(){
         //recyclerView2.layoutManager = LinearLayoutManager(activity)
-        recyclerView2.layoutManager = GridLayoutManager(activity, 3)
+        recyclerView2.layoutManager = GridLayoutManager(activity, 2)
         val adapter = RecetarioAdapter(foodList)
         recyclerView2.adapter = adapter
     }

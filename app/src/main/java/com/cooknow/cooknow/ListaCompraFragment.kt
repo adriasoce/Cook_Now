@@ -13,10 +13,7 @@ import kotlinx.android.synthetic.main.fragment_lista_compra.*
 
 class ListaCompraFragment : Fragment() {
 
-    val recetas = Recetario().getRecetario()
-
-    var shuffledRecetas = recetas.shuffled()
-    var subRecetas = shuffledRecetas.subList(1, 4).toMutableList()
+    var recetas = Recetario().getListaCompra() //TODO: Retomar antiguo si no se añade
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -25,6 +22,7 @@ class ListaCompraFragment : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_lista_compra, container, false)
 
+        recetas = Recetario().getListaCompra()
 
         (activity as AppCompatActivity?)!!.title = "Lista de la compra"
 
@@ -32,6 +30,13 @@ class ListaCompraFragment : Fragment() {
         // IMPLEMENT
 
         return view
+    }
+
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        (activity as AppCompatActivity?)!!.title = "Lista de la compra"
     }
 
 
@@ -44,7 +49,7 @@ class ListaCompraFragment : Fragment() {
 
     fun initRecyclerCompra(){
         recyclerViewCompra.layoutManager = LinearLayoutManager(activity)
-        val adapter = ListaCompraAdapter(subRecetas)
+        val adapter = ListaCompraAdapter(recetas)
         recyclerViewCompra.adapter = adapter
     }
 

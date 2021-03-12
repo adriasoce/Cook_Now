@@ -24,6 +24,7 @@
                 android:textColor="@color/colorPrimaryDark"
                 android:textSize="35sp"
                 android:textStyle="bold"
+                android:gravity="center"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -50,14 +51,29 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/ImageReceta">
 
+                <Button
+                    android:id="@+id/buttonCocinar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorPrimary"
+                    android:paddingStart="40dp"
+                    android:paddingEnd="40dp"
+                    android:text="¡A Cocinar!"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
                 <TextView
                     android:id="@+id/labelIngredientes"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Ingredientes:"
                     android:textSize="18sp"
+                    android:layout_marginTop="20dp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toBottomOf="@id/buttonCocinar"
+                    android:textStyle="bold"/>
 
                 <TextView
                     android:id="@+id/textIngredientes"
@@ -77,7 +93,8 @@
                     android:textSize="18sp"
                     android:layout_marginTop="20dp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textIngredientes"/>
+                    app:layout_constraintTop_toBottomOf="@+id/textIngredientes"
+                    android:textStyle="bold"/>
 
                 <TextView
                     android:id="@+id/textTiempo"
@@ -97,7 +114,8 @@
                     android:textSize="18sp"
                     android:layout_marginTop="20dp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textTiempo"/>
+                    app:layout_constraintTop_toBottomOf="@+id/textTiempo"
+                    android:textStyle="bold"/>
 
                 <TextView
                     android:id="@+id/textRaciones"
@@ -117,7 +135,8 @@
                     android:textSize="18sp"
                     android:layout_marginTop="20dp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textRaciones"/>
+                    app:layout_constraintTop_toBottomOf="@+id/textRaciones"
+                    android:textStyle="bold"/>
 
                 <TextView
                     android:id="@+id/textDificultad"
@@ -134,28 +153,16 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="40dp"
+                    android:layout_marginBottom="40dp"
                     android:background="@color/colorPrimary"
                     android:paddingStart="40dp"
                     android:paddingEnd="40dp"
                     android:text="Añadir Lista Ingredientes"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textDificultad" />
 
-                <Button
-                    android:id="@+id/buttonCocinar"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="40dp"
-                    android:layout_marginBottom="40dp"
-                    android:background="@color/colorPrimaryDark"
-                    android:paddingStart="40dp"
-                    android:paddingEnd="40dp"
-                    android:text="¡A Cocinar!"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/buttonIngredientes" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>

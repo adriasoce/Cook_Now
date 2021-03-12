@@ -13,7 +13,7 @@ class Receta(
     private val ingredientes: MutableList<String>,
     private val pasos: MutableList<Pasos>,
     private val congrats: String,
-    private val done: Boolean
+    private var done: Boolean
 ) {
 
     fun dificultadStars(): String{
@@ -43,10 +43,6 @@ class Receta(
         return raciones
     }
 
-    fun getDificultad(): Int{
-        return dificultad
-    }
-
     fun getCongrats(): String{
         return congrats
     }
@@ -56,11 +52,30 @@ class Receta(
     }
 
     fun getStringIngredientes(): String{
-        return ingredientes.joinToString(separator = "\n")
+        return ingredientes.joinToString(separator = "\n\n")
+    }
+
+    fun getPasos(): MutableList<Pasos>{
+        return pasos
+    }
+
+    fun getPasosId(id: Int): Pasos{
+
+        val size = pasos.size - 1
+
+        for (i: Int in (0..size)){
+            if (pasos[i].getId() == id) return pasos[i]
+        }
+
+        return pasos[0]
     }
 
     fun getId(): Int{
         return id
+    }
+
+    fun setDone(d: Boolean){
+        this.done = d
     }
 
 }

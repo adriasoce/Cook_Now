@@ -5,4 +5,13 @@ class Pasos(
     private val contenido: String
 ) {
 
+    fun getId(): Int{
+        return id
+    }
+
+    fun getContenido(): String{
+        return contenido
+    }
+
+
 }

@@ -20,16 +20,6 @@
             android:layout_height="match_parent"
             android:orientation="vertical" >
 
-            <Button
-                android:id="@+id/botonNoCompra"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:layout_gravity="start"
-                android:background="#FEB281"
-                android:text="X"
-                android:textColor="@color/colorWhite"/>
-
         </LinearLayout>
 
         <LinearLayout
@@ -57,16 +47,17 @@
             android:layout_height="match_parent"
             android:orientation="vertical" >
 
-            <CheckBox
-                android:id="@+id/checkCompra"
+
+            <Button
+                android:id="@+id/botonNoCompra"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_gravity="end"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
                 android:layout_margin="5dp"
-                android:text="Buy?"
-                android:thumbTint="#E7F2F8"></CheckBox>
-
-
+                android:background="#FEB281"
+                android:text="X"
+                android:textSize="25sp"
+                android:textColor="@color/colorWhite" />
         </LinearLayout>
 
 
@@ -91,6 +82,14 @@
 
     </LinearLayout>
 
+    <CheckBox
+        android:id="@+id/checkCompra"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_margin="5dp"
+        android:text="Comprado?"
+        android:thumbTint="#E7F2F8" />
 
 
 </LinearLayout>

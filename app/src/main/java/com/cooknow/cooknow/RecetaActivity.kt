@@ -1,7 +1,9 @@
 package com.cooknow.cooknow
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -16,10 +18,9 @@ class RecetaActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_receta)
 
+        val actionbar = supportActionBar
+        actionbar?.setDisplayHomeAsUpEnabled(true)
 
-        //val receta: String = intent.getSerializableExtra("Receta") as String
-
-        Log.i("RECETATEST", "Conseguido")
 
         val receta_id: Int = intent.getIntExtra("Receta", 0)
 
@@ -32,19 +33,26 @@ class RecetaActivity : AppCompatActivity() {
         val raciones = findViewById<TextView>(R.id.textRaciones)
         val dificultad = findViewById<TextView>(R.id.textDificultad)
 
+        val aCocinar = findViewById<Button>(R.id.buttonCocinar)
+        val anadirIngredientes = findViewById<Button>(R.id.buttonIngredientes)
+
         titulo.text = receta.getNombre()
         imagen.setImageDrawable(ContextCompat.getDrawable(this, receta.getImagen()))
-
-        Log.i("RECETATEST", "Antes ingredientes")
-
-        //receta.getStringIngredientes()
-
-
-        Log.i("RECETATEST", "Despues ingredientes")
-
+        ingredientes.text = receta.getStringIngredientes()
         tiempo.text = receta.getDuracion()
         raciones.text = receta.getRaciones()
         dificultad.text = receta.dificultadStars()
+
+
+        aCocinar.setOnClickListener{
+            val intentPasos = Intent(this, PasosActivity::class.java).apply {  }
+            intentPasos.putExtra("IdReceta", receta.getId())
+            startActivity(intentPasos)
+        }
+
+        anadirIngredientes.setOnClickListener {
+
+        }
 
 
     }
