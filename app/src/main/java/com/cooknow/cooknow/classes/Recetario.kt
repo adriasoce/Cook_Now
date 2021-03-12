@@ -412,7 +412,14 @@ class Recetario{
         val size = Singleton.recetario.size - 1
 
         for (i: Int in (0..size)){
-            if (Singleton.recetario[i].getDone() == d) recetario_bool.add(Singleton.recetario[i])
+            if (d){
+                if (Singleton.recetario[i].getDone()) recetario_bool.add(Singleton.recetario[i])
+            }else{
+                if (!Singleton.recetario[i].getDone() && !Singleton.recetario[i].getDescartada()){
+                    recetario_bool.add(Singleton.recetario[i])
+                }
+            }
+
         }
 
         return recetario_bool

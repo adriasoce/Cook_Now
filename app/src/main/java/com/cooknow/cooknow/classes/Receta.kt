@@ -14,6 +14,7 @@ class Receta(
     private val pasos: MutableList<Pasos>,
     private val congrats: String,
     private var done: Boolean,
+    private var descartada: Boolean = false,
     private var comprado: Boolean = false
 ) {
 
@@ -79,12 +80,20 @@ class Receta(
         return comprado
     }
 
+    fun getDescartada(): Boolean{
+        return descartada
+    }
+
     fun setDone(d: Boolean){
         this.done = d
     }
 
     fun setComprado(c: Boolean){
         this.comprado = c
+    }
+
+    fun setDescartada(descarte: Boolean){
+        this.descartada = descarte
     }
 
 }

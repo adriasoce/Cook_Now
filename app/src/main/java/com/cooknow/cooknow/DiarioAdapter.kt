@@ -4,10 +4,13 @@ import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.GONE
+import android.view.View.VISIBLE
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.cooknow.cooknow.classes.Receta
+import kotlinx.android.synthetic.main.fragment_diario.view.*
 import kotlinx.android.synthetic.main.receta_item.view.*
 
 class DiarioAdapter(val receta:MutableList<Receta>):RecyclerView.Adapter<DiarioAdapter.DiarioHolder>() {
@@ -25,14 +28,20 @@ class DiarioAdapter(val receta:MutableList<Receta>):RecyclerView.Adapter<DiarioA
 
     override fun onBindViewHolder(holder: DiarioHolder, position: Int) {
         holder.render(receta[position])
+
+
+
         holder.view.botonRechazar.setOnClickListener {
+
+            receta[position].setDescartada(true)
             receta.removeAt(position)
+
             notifyItemRemoved(position)
             notifyItemRangeChanged(position, receta.size)
+
         }
 
         holder.view.botonCocinar.setOnClickListener {
-            Log.i("RECETATEST", "Antes del Intent")
 
             val mediaStreamIntent = Intent(holder.view.context, RecetaActivity::class.java)
             mediaStreamIntent.putExtra("Receta", receta[position].getId())
