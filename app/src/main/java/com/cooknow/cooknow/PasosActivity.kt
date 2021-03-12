@@ -1,18 +1,32 @@
 package com.cooknow.cooknow
 
+import android.Manifest
+import android.R.attr
+import android.app.Activity
+import android.content.ContentResolver
+import android.content.ContentValues
 import android.content.Intent
-import android.media.Image
-import android.opengl.Visibility
-import androidx.appcompat.app.AppCompatActivity
+import android.content.pm.PackageManager
+import android.graphics.Bitmap
+import android.net.Uri
+import android.os.Build
 import android.os.Bundle
+import android.provider.MediaStore
+import android.provider.SyncStateContract.Helpers.insert
 import android.view.View.*
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.core.content.ContextCompat
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.cooknow.cooknow.classes.Recetario
+import kotlinx.android.synthetic.main.activity_pasos.*
+
 
 class PasosActivity : AppCompatActivity() {
+
+    private val REQUEST_CAMERA = 1001
+    var foto: Uri? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,10 +44,12 @@ class PasosActivity : AppCompatActivity() {
         val tituloPasos = findViewById<TextView>(R.id.title_pasos)
         val textPasos = findViewById<TextView>(R.id.textPasos)
         val subeFoto = findViewById<Button>(R.id.buttonFoto)
-        val congratsImage = findViewById<ImageView>(R.id.ImageCongrats)
+        //val congratsImage = findViewById<ImageView>(R.id.ImageCongrats)
+
+
 
         subeFoto.visibility = INVISIBLE
-        congratsImage.visibility = GONE
+        ImageCongrats.visibility = GONE
 
         val pasos = receta.getPasos()
 
@@ -117,13 +133,69 @@ class PasosActivity : AppCompatActivity() {
         }
 
         subeFoto.setOnClickListener {
+
+            ImageCongrats.visibility = VISIBLE
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
+                if(checkSelfPermission(Manifest.permission.CAMERA) == PackageManager.PERMISSION_DENIED
+                    || checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_DENIED){
+                    val permisosCamara = arrayOf(Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                    requestPermissions(permisosCamara, REQUEST_CAMERA)
+                }else{
+                    abrirCamara()
+                }
+            }else{
+                abrirCamara()
+            }
+
+
+
+
+
             tituloPasos.text = resources.getString(R.string.Congrats)
             textPasos.text = receta.getCongrats()
 
-            congratsImage.visibility = VISIBLE
+
             anteriorButton.visibility = INVISIBLE
             subeFoto.visibility = INVISIBLE
 
+        }
+    }
+
+    fun abrirCamara(){
+        val value = ContentValues()
+        value.put(MediaStore.Images.Media.TITLE, "Nueva imagen")
+        foto = contentResolver.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, value)
+
+        val camaraintent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+        camaraintent.putExtra(MediaStore.EXTRA_OUTPUT, foto)
+        startActivityForResult(camaraintent, REQUEST_CAMERA)
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if (requestCode == REQUEST_CAMERA && resultCode == Activity.RESULT_OK) {
+
+            ImageCongrats.setImageURI(foto)
+
+        }
+    }
+
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        when (requestCode){
+            REQUEST_CAMERA -> {
+                if (grantResults[0] == PackageManager.PERMISSION_GRANTED){
+                    abrirCamara()
+                }else{
+                    Toast.makeText(this, "No se ha podido acceder a la Camara", Toast.LENGTH_SHORT).show()
+                }
+            }
         }
     }
 }

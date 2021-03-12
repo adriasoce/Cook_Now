@@ -26,7 +26,8 @@
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="HardcodedText" />
 
 
 
@@ -45,7 +46,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="180dp"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/canelonesfin"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
@@ -59,7 +59,8 @@
                     android:textSize="18sp"
                     android:layout_marginTop="30dp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/ImageCongrats" />
+                    app:layout_constraintTop_toBottomOf="@id/ImageCongrats"
+                    tools:ignore="HardcodedText" />
 
                 <Button
                     android:id="@+id/buttonAnterior"
@@ -72,7 +73,8 @@
                     android:text="Anterior"
                     android:drawableStart="@drawable/ic_left_arrow"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textPasos" />
+                    app:layout_constraintTop_toBottomOf="@+id/textPasos"
+                    tools:ignore="HardcodedText" />
 
                 <Button
                     android:id="@+id/buttonSiguiente"
@@ -85,7 +87,8 @@
                     android:text="Siguiente"
                     android:drawableEnd="@drawable/ic_right_arrow"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textPasos" />
+                    app:layout_constraintTop_toBottomOf="@+id/textPasos"
+                    tools:ignore="HardcodedText" />
 
                 <Button
                     android:id="@+id/buttonFoto"
@@ -98,7 +101,8 @@
                     android:text="Subir una Foto  "
                     android:drawableEnd="@drawable/ic_camera"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/buttonAnterior" />
+                    app:layout_constraintTop_toBottomOf="@+id/buttonAnterior"
+                    tools:ignore="HardcodedText" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>

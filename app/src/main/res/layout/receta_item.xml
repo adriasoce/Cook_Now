@@ -145,7 +145,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="#4C5270"
-            android:text="Prefiero otra"
+            android:text="Descartar Receta"
             android:textSize="15sp"
             tools:ignore="ButtonStyle,HardcodedText" />
 
