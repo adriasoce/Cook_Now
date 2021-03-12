@@ -13,7 +13,8 @@ class Receta(
     private val ingredientes: MutableList<String>,
     private val pasos: MutableList<Pasos>,
     private val congrats: String,
-    private var done: Boolean
+    private var done: Boolean,
+    private var comprado: Boolean = false
 ) {
 
     fun dificultadStars(): String{
@@ -74,8 +75,16 @@ class Receta(
         return id
     }
 
+    fun getComprado(): Boolean{
+        return comprado
+    }
+
     fun setDone(d: Boolean){
         this.done = d
+    }
+
+    fun setComprado(c: Boolean){
+        this.comprado = c
     }
 
 }

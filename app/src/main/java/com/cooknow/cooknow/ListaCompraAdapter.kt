@@ -28,6 +28,10 @@ class ListaCompraAdapter(val receta:MutableList<Receta>): RecyclerView.Adapter<L
             notifyItemRemoved(position)
             notifyItemRangeChanged(position, receta.size)
         }
+
+        holder.view.checkCompra.setOnClickListener {
+            receta[position].setComprado(holder.view.checkCompra.isChecked)
+        }
     }
 
 
@@ -35,7 +39,7 @@ class ListaCompraAdapter(val receta:MutableList<Receta>): RecyclerView.Adapter<L
 
         fun render(receta: Receta){
             view.nombreCompra.text = receta.getNombre()
-            view.checkCompra.isChecked = false
+            view.checkCompra.isChecked = receta.getComprado()
             view.ingredientesCompra.text = receta.getStringIngredientes()
         }
 

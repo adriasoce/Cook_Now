@@ -5,7 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.CheckBox
 import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.cooknow.cooknow.classes.Recetario
 import kotlinx.android.synthetic.main.fragment_lista_compra.*
@@ -23,6 +25,8 @@ class ListaCompraFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_lista_compra, container, false)
 
         recetas = Recetario().getListaCompra()
+
+
 
         (activity as AppCompatActivity?)!!.supportActionBar!!.title = "Lista de la Compra"
 
