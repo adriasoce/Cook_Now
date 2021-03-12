@@ -13,7 +13,7 @@ import kotlinx.android.synthetic.main.fragment_lista_compra.*
 
 class ListaCompraFragment : Fragment() {
 
-    var recetas = Recetario().getListaCompra() //TODO: Retomar antiguo si no se añade
+    var recetas = Recetario().getListaCompra()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -24,19 +24,12 @@ class ListaCompraFragment : Fragment() {
 
         recetas = Recetario().getListaCompra()
 
-        (activity as AppCompatActivity?)!!.title = "Lista de la compra"
+        (activity as AppCompatActivity?)!!.supportActionBar!!.title = "Lista de la Compra"
 
 
         // IMPLEMENT
 
         return view
-    }
-
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        (activity as AppCompatActivity?)!!.title = "Lista de la compra"
     }
 
 

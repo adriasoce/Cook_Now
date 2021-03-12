@@ -16,7 +16,7 @@ import kotlinx.android.synthetic.main.fragment_diario.*
 
 class DiarioFragment : Fragment() {
 
-    val recetas = Recetario().getRecetarioDiario()
+    var recetas = Recetario().getRecetarioDiario()
 
 
 
@@ -28,29 +28,21 @@ class DiarioFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_diario, container, false)
         // IMPLEMENT
 
-        (activity as AppCompatActivity?)!!.title = "Diario"
+        (activity as AppCompatActivity?)!!.supportActionBar!!.title = "Diario"
 
+        recetas = Recetario().getRecetarioDiario()
 
         return view
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        (activity as AppCompatActivity?)!!.title = "Diario"
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
         initRecyclerRecetario()
-
-
-
     }
 
     fun initRecyclerRecetario(){
-        recyclerView.addItemDecoration(OverlappingDecoration())
+        //recyclerView.addItemDecoration(OverlappingDecoration())
         recyclerView.layoutManager = LinearLayoutManager(activity)
         val adapter = DiarioAdapter(recetas)
         recyclerView.adapter = adapter

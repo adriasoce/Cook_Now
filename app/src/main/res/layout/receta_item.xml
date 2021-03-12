@@ -3,11 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="450dp"
+    android:layout_height="wrap_content"
     android:background="#FAE8E0"
     android:orientation="vertical"
     android:paddingBottom="15dp"
     android:radius="50dp">
+
 
 
     <TextView
@@ -16,7 +17,7 @@
         android:layout_height="30dp"
         android:background="#FFC75F"
         android:gravity="center"
-        android:textSize="20dp"
+        android:textSize="20sp"
         android:textStyle="bold"
         tools:text="Plato Ejemplo" />
 
@@ -29,10 +30,14 @@
 
         <ImageView
             android:id="@+id/imgReceta"
-            android:layout_width="200dp"
+            android:layout_width="160dp"
             android:layout_height="match_parent"
+            android:adjustViewBounds="false"
+            android:cropToPadding="false"
             android:padding="10dp"
-            app:srcCompat="@drawable/ic_cooking" />
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/ic_cooking"
+            tools:ignore="ContentDescription" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -44,8 +49,9 @@
                 android:id="@+id/descripcionString"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Descripcion:"
-                android:textSize="20dp" />
+                android:text="@string/descripcion"
+                android:textStyle="bold"
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/descripcionReceta"
@@ -55,12 +61,20 @@
                 app:layout_constraintTop_toBottomOf="@+id/descripcionString"
                 tools:text="Esta receta viene del país x y ha ganado mucha popularidad porque y Esta receta viene del país x y ha ganado mucha popularidad porque y Esta receta viene del país x y ha ganado mucha popularidad porque y..." />
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="10dp"
+                android:background="?android:attr/listDivider"/>
+
             <TextView
                 android:id="@+id/duracionString"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Duracion:"
-                android:textSize="20dp" />
+                android:text="Duración:"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                tools:ignore="HardcodedText" />
 
             <TextView
                 android:id="@+id/duracionReceta"
@@ -69,13 +83,21 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/duracionString"
                 tools:text="40 min" />
+            <View
+
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="10dp"
+                android:background="?android:attr/listDivider"/>
 
             <TextView
                 android:id="@+id/personasString"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Raciones:"
-                android:textSize="20dp" />
+                android:textStyle="bold"
+                android:textSize="20sp"
+                tools:ignore="HardcodedText"/>
 
             <TextView
                 android:id="@+id/personasReceta"
@@ -83,12 +105,20 @@
                 android:layout_height="wrap_content"
                 tools:text="4 comensales" />
 
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="10dp"
+                android:background="?android:attr/listDivider"/>
+
             <TextView
                 android:id="@+id/infoReceta"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Dificultad:"
-                android:textSize="20dp"></TextView>
+                android:textStyle="bold"
+                android:textSize="20sp"
+                tools:ignore="HardcodedText" />
 
             <TextView
                 android:id="@+id/infoDificultad"
@@ -116,7 +146,8 @@
             android:layout_height="wrap_content"
             android:textColor="#4C5270"
             android:text="Prefiero otra"
-            android:textSize="15dp"></Button>
+            android:textSize="15sp"
+            tools:ignore="ButtonStyle,HardcodedText" />
 
         <Button
             android:id="@+id/botonCocinar"
@@ -126,7 +157,8 @@
             android:background="@color/colorPrimary"
             android:paddingStart="15dp"
             android:paddingEnd="15dp"
-            android:textSize="15dp"/>
+            android:textSize="15sp"
+            tools:ignore="ButtonStyle,HardcodedText"/>
 
 
     </LinearLayout>

@@ -1,5 +1,6 @@
 package com.cooknow.cooknow
 
+import android.content.Intent
 import android.media.Image
 import android.opengl.Visibility
 import androidx.appcompat.app.AppCompatActivity
@@ -69,7 +70,8 @@ class PasosActivity : AppCompatActivity() {
 
                 receta.setDone(true)
 
-                onBackPressed()
+                val intentTerminado = Intent(this, BottomNavigationActivity::class.java).apply {  }
+                startActivity(intentTerminado)
 
             }
             else{

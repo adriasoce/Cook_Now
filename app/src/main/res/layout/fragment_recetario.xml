@@ -4,17 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal"
+    android:orientation="vertical"
     tools:context=".RecetarioFragment">
+
+
+
+    <SearchView
+        android:id="@+id/buscarCanelones"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:queryHint="Busca tu Receta"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView2"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
-    <SearchView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+
 
 </LinearLayout>
 

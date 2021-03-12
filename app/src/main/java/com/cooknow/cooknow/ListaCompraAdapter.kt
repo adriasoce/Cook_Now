@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.cooknow.cooknow.classes.Receta
+import com.cooknow.cooknow.classes.Recetario
 import kotlinx.android.synthetic.main.compra_item.view.*
 
 class ListaCompraAdapter(val receta:MutableList<Receta>): RecyclerView.Adapter<ListaCompraAdapter.ListaCompraHolder>() {
@@ -23,7 +24,7 @@ class ListaCompraAdapter(val receta:MutableList<Receta>): RecyclerView.Adapter<L
     override fun onBindViewHolder(holder: ListaCompraHolder, position: Int) {
         holder.render(receta[position])
         holder.view.botonNoCompra.setOnClickListener {
-            receta.removeAt(position)
+            Recetario().quitarListaCompra(receta[position])
             notifyItemRemoved(position)
             notifyItemRangeChanged(position, receta.size)
         }
@@ -34,7 +35,7 @@ class ListaCompraAdapter(val receta:MutableList<Receta>): RecyclerView.Adapter<L
 
         fun render(receta: Receta){
             view.nombreCompra.text = receta.getNombre()
-            view.checkCompra.isChecked = receta.getDone()
+            view.checkCompra.isChecked = false
             view.ingredientesCompra.text = receta.getStringIngredientes()
         }
 

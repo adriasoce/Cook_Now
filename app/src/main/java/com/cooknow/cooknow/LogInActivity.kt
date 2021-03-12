@@ -21,9 +21,6 @@ class LogInActivity : AppCompatActivity() {
         val createAccount = findViewById<TextView>(R.id.textCreateAccount)
         val forgotPassword = findViewById<TextView>(R.id.textForgotPassword)
 
-        val emailAddress = findViewById<EditText>(R.id.editTextEmailAddress)
-        val password = findViewById<EditText>(R.id.editTextPassword)
-
         createAccount.setOnClickListener {
             val intentCreate = Intent(this, RegisterActivity::class.java).apply {  }
             startActivity(intentCreate)
@@ -37,9 +34,8 @@ class LogInActivity : AppCompatActivity() {
 
         accessButton.setOnClickListener {
 
-            val TEST = emailAddress.text.toString() + "\n" + password.text.toString()
 
-            Toast.makeText(this, TEST, Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Login Correcto", Toast.LENGTH_SHORT).show()
 
 
             val intentTEST = Intent(this, BottomNavigationActivity::class.java).apply {  }

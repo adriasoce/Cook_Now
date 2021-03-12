@@ -6,6 +6,7 @@ import android.util.Log
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.cooknow.cooknow.classes.Receta
@@ -51,7 +52,14 @@ class RecetaActivity : AppCompatActivity() {
         }
 
         anadirIngredientes.setOnClickListener {
+            val anadido = Recetario().anadirListaCompra(receta)
 
+            if (anadido){
+                Toast.makeText(this, "Ingredientes añadidos a la lista de la compra", Toast.LENGTH_SHORT).show()
+            }
+            else{
+                Toast.makeText(this, "Ya esta añadido a la lista de la compra", Toast.LENGTH_SHORT).show()
+            }
         }
 
 

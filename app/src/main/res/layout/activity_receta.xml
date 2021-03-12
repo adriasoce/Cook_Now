@@ -27,7 +27,8 @@
                 android:gravity="center"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="HardcodedText" />
 
             <ImageView
                 android:id="@+id/ImageReceta"
@@ -61,7 +62,8 @@
                     android:text="¡A Cocinar!"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="HardcodedText" />
 
 
                 <TextView
@@ -73,7 +75,8 @@
                     android:layout_marginTop="20dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/buttonCocinar"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText"/>
 
                 <TextView
                     android:id="@+id/textIngredientes"
@@ -85,6 +88,14 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/labelIngredientes" />
 
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_marginTop="10dp"
+                    android:background="?android:attr/listDivider"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/textIngredientes" />
+
                 <TextView
                     android:id="@+id/labelTiempo"
                     android:layout_width="wrap_content"
@@ -94,7 +105,8 @@
                     android:layout_marginTop="20dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textIngredientes"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText"/>
 
                 <TextView
                     android:id="@+id/textTiempo"
@@ -106,6 +118,14 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/labelTiempo" />
 
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_marginTop="10dp"
+                    android:background="?android:attr/listDivider"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/textTiempo" />
+
                 <TextView
                     android:id="@+id/labelRaciones"
                     android:layout_width="wrap_content"
@@ -115,7 +135,8 @@
                     android:layout_marginTop="20dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textTiempo"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText"/>
 
                 <TextView
                     android:id="@+id/textRaciones"
@@ -127,6 +148,14 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/labelRaciones" />
 
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_marginTop="10dp"
+                    android:background="?android:attr/listDivider"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/textRaciones" />
+
                 <TextView
                     android:id="@+id/labelDificultad"
                     android:layout_width="wrap_content"
@@ -136,7 +165,8 @@
                     android:layout_marginTop="20dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textRaciones"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText"/>
 
                 <TextView
                     android:id="@+id/textDificultad"
@@ -161,7 +191,8 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textDificultad" />
+                    app:layout_constraintTop_toBottomOf="@+id/textDificultad"
+                    tools:ignore="HardcodedText" />
 
 
 
